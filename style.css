@@ -35,6 +35,7 @@ body{
 
 .todo-elt{
     display: flex;
+    flex-direction: column;
     list-style: none;
 
     /*morphisme*/
@@ -49,22 +50,52 @@ body{
     */
 
     margin: 20px;
-    padding: 5px 20px;
+    padding: 10px 20px;
 
-    border-radius: 10px;
-    color: balck;
+    color: black;
     align-items: center;
-    gap : 20px
 }
 
 .todo-elt:hover{
     transform: scale(1.05);
 }
 
+
+.add-sub-button{
+    border: none;
+    background-color: transparent;
+   
+   
+    /*display: none;*/
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.add-sub-button img:hover{
+    cursor: pointer;
+}
+
+.todo-elt:hover .add-sub-button{
+    display: inline-block;
+    max-height: 50px;
+}
+
+
+
+.todo-elt-title{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap : 20px;
+    align-items: center;
+}
+
 .todo-remove-button{
     border: none;
     cursor: pointer;
     background: transparent;
+    margin-left: auto;
 }
 
 .todo-remove-button img{
@@ -81,4 +112,9 @@ body{
 .task-dragged{
     opacity: 0.5;
     border: 2px dashed purple;
+}
+
+.todo-sub{
+    transform: scale(0.8);
+    border-radius: 2px;
 }

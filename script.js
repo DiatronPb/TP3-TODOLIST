@@ -9,18 +9,21 @@ document.getElementById("task-add").addEventListener("click", () => {
         let newtask = document.createElement("li");
 
         newtask.id = `li-${cpt_task}`;
-        cpt_task ++;
 
         newtask.draggable = true;
         newtask.classList.add("todo-elt")
 
-        let p = document.createElement("p");
-        p.textContent = txt;
-        newtask.appendChild(p);
+        let title = document.createElement("div");
+        title.classList.add("todo-elt-title");
 
         let inp = document.createElement("input");
         inp.type = "checkbox";
-        newtask.appendChild(inp);
+        inp.id = `li-c-${cpt_task}'`
+        title.appendChild(inp);
+
+        let p = document.createElement("p");
+        p.textContent = txt;
+        title.appendChild(p);
 
         let rem = document.createElement("button");
         rem.classList.add("todo-remove-button");
@@ -33,7 +36,7 @@ document.getElementById("task-add").addEventListener("click", () => {
         rem.appendChild(im);
 
 
-        newtask.appendChild(rem);
+        title.appendChild(rem);
 
         /*drag and drop*/
 
@@ -70,8 +73,11 @@ document.getElementById("task-add").addEventListener("click", () => {
         
         })
 
+        newtask.appendChild(title)
 
         liste.appendChild(newtask);
+        cpt_task++;        
+
 
     }
 });
@@ -79,3 +85,7 @@ document.getElementById("task-add").addEventListener("click", () => {
 function deletetask(id_task){
     document.getElementById(id_task).remove();
 }
+
+document.getElementById("add-sub-button").addEventListener("click", () => {
+    // Ajout d'un sub-task
+});
