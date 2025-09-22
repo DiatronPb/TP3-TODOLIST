@@ -1,0 +1,84 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f3d2d2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.todo-container{
+    /*morphisme https://neumorphism.io/#f4d7ee*/
+    border-radius: 50px;
+    background: linear-gradient(315deg, #ffe1e1, #dbbdbd);
+    box-shadow:  -20px -20px 60px #cfb3b3,
+                20px 20px 60px #fff2f2;
+
+
+
+    border-radius: 5px;
+    width: 70%;
+    min-height: 100vh;
+    margin: 20px auto;
+    padding: 14px;
+    text-align: center;
+}
+
+.todo-add{
+    display: flex;
+    justify-content: center;
+    gap : 10px;
+}
+
+.todo-list{
+    padding: 0;
+}
+
+.todo-elt{
+    display: flex;
+    list-style: none;
+
+    /*morphisme*/
+    border-radius: 35px;
+    background: #f3d2d2;
+    box-shadow: inset -20px -20px 40px #cfb3b3,
+                inset 20px 20px 40px #fff2f2;
+
+    /*
+    border: 1 px solid black;
+    background-color: blue;
+    */
+
+    margin: 20px;
+    padding: 5px 20px;
+
+    border-radius: 10px;
+    color: balck;
+    align-items: center;
+    gap : 20px
+}
+
+.todo-elt:hover{
+    transform: scale(1.05);
+}
+
+.todo-remove-button{
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+.todo-remove-button img{
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.todo-remove-button img:hover{
+    /*https://codepen.io/sosuke/pen/Pjoqqp*/
+    filter: invert(24%) sepia(100%) saturate(7491%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.task-dragged{
+    opacity: 0.5;
+    border: 2px dashed purple;
+}
